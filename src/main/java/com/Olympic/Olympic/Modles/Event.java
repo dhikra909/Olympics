@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity
 
 
-public class Event {
+public class Event extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;

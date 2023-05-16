@@ -14,7 +14,7 @@ import javax.persistence.*;
 
 
 
-public class Athlete  {
+public class Athlete extends BaseEntity  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;

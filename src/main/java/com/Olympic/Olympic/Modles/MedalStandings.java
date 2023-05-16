@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Setter
 @Getter
 @Entity
-public class MedalStandings {
+public class MedalStandings extends BaseEntity {
   @Id
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,10 +26,5 @@ public class MedalStandings {
 
     @Column(name = "medals")
     private Integer medals;
-
-
-
-
-
 
 }

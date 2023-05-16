@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Date;
+import java.util.List;
+
 @Service
 public class AthleteServices {
 
@@ -24,15 +27,31 @@ public class AthleteServices {
         athlete.setSport(sport);
         athlete.setName(name);
         athlete.setNationality(nationality);
+        athleteRepositores.save(athlete);
     }
 
 
+    public Athlete getAthleteById(Integer id) {
+        Athlete athlete = athleteRepositores.findById(id).get();
+        return athlete;
+    }
 
 
+    public Athlete updateAthlete(String name, String nationality, String sport, String history ,Integer id){
+        Athlete athlete = athleteRepositores.getAthleteById(id);
+        athlete.setName(name);
+        athlete.setUpdatedDate(new Date());
+        return athleteRepositores.save(athlete);
+    }
+
+    public void deleteAthleteById(Integer id) {
+        athleteRepositores.getAthleteById(id);
+
+    }
 
 
-
-
-
+    public List<Athlete> getAllAthlete() {
+        return athleteRepositores.findAll();
+    }
 
 }

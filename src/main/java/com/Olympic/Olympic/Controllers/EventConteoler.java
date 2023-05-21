@@ -18,7 +18,10 @@ public class EventConteoler {
     @Autowired
     EventServices eventServices;
 
-  
+    @RequestMapping(value ="/EventeData" ,method = RequestMethod.POST)
+    public void createEvent(@RequestParam String name , @RequestParam  String Sport, @RequestParam Date Schedale, @RequestParam String resalts , @RequestParam Integer id) throws ParseException {
+        eventServices.createEvent(name ,Sport, Schedale,resalts, id);
+    }
 
     @RequestMapping(value = "eventId", method = RequestMethod.GET)
     public Event getEventById(@RequestParam Integer id) {

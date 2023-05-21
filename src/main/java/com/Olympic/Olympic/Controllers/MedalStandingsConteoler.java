@@ -19,14 +19,17 @@ public class MedalStandingsConteoler {
     @Autowired
     MedalStandingsServices medalStandingsServices;
 
-   
+
 
     @RequestMapping(value = "medalStandingsId", method = RequestMethod.GET)
     public MedalStandings getMedalStandingsById(@RequestParam Integer id) {
         MedalStandings medalStandings = medalStandingsServices.getMedalStandingsById(id);
         return medalStandings;
     }
-
+    @RequestMapping(value ="/MedalStandingseData" ,method = RequestMethod.POST)
+    public void createMedalStandings(@RequestParam String name , @RequestParam  Integer number, @RequestParam Integer silver, @RequestParam Integer medals , @RequestParam Integer id) throws ParseException {
+        medalStandingsServices.createMedalStandings(name ,number, silver,medals, id);
+    }
 
     @RequestMapping("/updateMedalStandings")
     public MedalStandings updateMedalStandings(@RequestParam String name , @RequestParam  Integer number, @RequestParam Integer silver, @RequestParam Integer medals , @RequestParam Integer id){

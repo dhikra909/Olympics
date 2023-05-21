@@ -20,11 +20,7 @@ public class AthleteConteoler {
         athleteServices.createAthlete(name ,nationality, sport,history, id);
     }
 
-    @RequestMapping(value = "athleteId", method = RequestMethod.GET)
-    public Athlete getAthleteById(@RequestParam Integer id) {
-        Athlete athlete = athleteServices.getAthleteById(id);
-        return athlete;
-    }
+   
 
 
     @RequestMapping("/updateAthlete")

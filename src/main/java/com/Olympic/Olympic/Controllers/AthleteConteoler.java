@@ -41,7 +41,10 @@ public class AthleteConteoler {
 
 
 
-
+    @GetMapping(value = "/getAllAthlete")
+    public List<Athlete> getAllAthlete() {
+        return athleteServices.getAllAthlete();
+    }
 
 
 

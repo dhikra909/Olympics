@@ -39,7 +39,11 @@ public class EventConteoler {
         eventServices.deleteEventById(id);
     }
 
-   
+    @GetMapping(value = "/getAllEvent")
+    public List<Event> getAllEvent() {
+        return eventServices.getAllEvent();
+    }
+
 
 
 

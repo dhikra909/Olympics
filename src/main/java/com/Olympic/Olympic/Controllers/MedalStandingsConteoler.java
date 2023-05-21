@@ -37,10 +37,7 @@ public class MedalStandingsConteoler {
     }
 
 
-    @RequestMapping(value = "deleteMedalStandingsById", method = RequestMethod.POST)
-    public void deleteMedalStandingsById(@RequestParam Integer id) {
-        medalStandingsServices.deleteMedalStandingsById(id);
-    }
+   
 
     @GetMapping(value = "/getAllMedalStandings")
     public List<MedalStandings> getAllEvent() {

@@ -34,7 +34,10 @@ public class AthleteConteoler {
 
 
 
-  
+    @RequestMapping(value = "deleteCAthleteById", method = RequestMethod.POST)
+    public void deleteAthleteById(@RequestParam Integer id) {
+        athleteServices.deleteAthleteById(id);
+    }
 
 
 

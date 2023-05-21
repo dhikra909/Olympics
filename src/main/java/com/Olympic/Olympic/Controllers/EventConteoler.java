@@ -29,10 +29,7 @@ public class EventConteoler {
         return event;
     }
 
-    @RequestMapping("/updateEvent")
-    public Event updateEvent(@RequestParam String name , @RequestParam  String Sport, @RequestParam Date Schedale, @RequestParam String resalts , @RequestParam Integer id){
-        return eventServices.updateEvent(name , Sport , Schedale,resalts,id);
-    }
+   
 
     @RequestMapping(value = "deleteEventById", method = RequestMethod.POST)
     public void deleteEventById(@RequestParam Integer id) {

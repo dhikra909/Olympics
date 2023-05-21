@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping(value = "athlete")
 public class AthleteConteoler {
 
-    @Autowired
+  
     AthleteServices athleteServices;
 
     @RequestMapping(value ="/AthleteData" ,method = RequestMethod.POST)

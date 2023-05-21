@@ -19,10 +19,7 @@ public class MedalStandingsConteoler {
     @Autowired
     MedalStandingsServices medalStandingsServices;
 
-    @RequestMapping(value ="/MedalStandingseData" ,method = RequestMethod.POST)
-    public void createMedalStandings(@RequestParam String name , @RequestParam  Integer number, @RequestParam Integer silver, @RequestParam Integer medals , @RequestParam Integer id) throws ParseException {
-        medalStandingsServices.createMedalStandings(name ,number, silver,medals, id);
-    }
+   
 
     @RequestMapping(value = "medalStandingsId", method = RequestMethod.GET)
     public MedalStandings getMedalStandingsById(@RequestParam Integer id) {

@@ -42,7 +42,10 @@ public class MedalStandingsConteoler {
         medalStandingsServices.deleteMedalStandingsById(id);
     }
 
-  
+    @GetMapping(value = "/getAllMedalStandings")
+    public List<MedalStandings> getAllEvent() {
+        return medalStandingsServices.getAllMedalStandings();
+    }
 
 
 

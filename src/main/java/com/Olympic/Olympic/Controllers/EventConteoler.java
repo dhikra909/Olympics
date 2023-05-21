@@ -23,7 +23,11 @@ public class EventConteoler {
         eventServices.createEvent(name ,Sport, Schedale,resalts, id);
     }
 
-  
+    @RequestMapping(value = "eventId", method = RequestMethod.GET)
+    public Event getEventById(@RequestParam Integer id) {
+        Event event = eventServices.getEventById(id);
+        return event;
+    }
 
     @RequestMapping("/updateEvent")
     public Event updateEvent(@RequestParam String name , @RequestParam  String Sport, @RequestParam Date Schedale, @RequestParam String resalts , @RequestParam Integer id){

@@ -26,12 +26,13 @@ public class AthleteConteoler {
         return athlete;
     }
 
-
-
     @RequestMapping("/updateAthlete")
     public Athlete updateAthlete(@RequestParam String name , @RequestParam  String nationality, @RequestParam String sport,@RequestParam String history ,@RequestParam Integer id){
         return athleteServices.updateAthlete(name , nationality , sport,history,id);
     }
+
+
+
 
     @RequestMapping(value = "deleteCAthleteById", method = RequestMethod.POST)
     public void deleteAthleteById(@RequestParam Integer id) {

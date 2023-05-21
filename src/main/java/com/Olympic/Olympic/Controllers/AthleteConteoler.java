@@ -9,7 +9,7 @@ import java.text.ParseException;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "athlete")
+
 public class AthleteConteoler {
 
     @Autowired

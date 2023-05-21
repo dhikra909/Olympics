@@ -22,7 +22,9 @@ public class Athlete extends BaseEntity  {
     @Column(name = "name")
     private String name ;
 
-  
+    @Column(name = "nationality")
+    private String nationality;
+
     @Column(name = "sport")
     private String sport;
 

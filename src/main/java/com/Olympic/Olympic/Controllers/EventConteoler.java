@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping(value = "event")
 public class EventConteoler {
 
-    @Autowired
+  
     EventServices eventServices;
 
     @RequestMapping(value ="/EventeData" ,method = RequestMethod.POST)

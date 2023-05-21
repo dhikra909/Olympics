@@ -18,7 +18,7 @@ public class GeneralControlle {
 
 
     @GetMapping("/admin")
-        @PreAuthorize("hasRole('ADMIN')")
+      
         public String adminOnly() {
             return "You are an admin!";
         }

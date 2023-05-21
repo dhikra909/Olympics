@@ -16,7 +16,7 @@ import java.util.List;
 public class MedalStandingsConteoler {
 
 
- 
+    @Autowired
     MedalStandingsServices medalStandingsServices;
 
     @RequestMapping(value ="/MedalStandingseData" ,method = RequestMethod.POST)

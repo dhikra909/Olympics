@@ -15,10 +15,7 @@ public class AthleteConteoler {
     @Autowired
     AthleteServices athleteServices;
 
-    @RequestMapping(value ="/AthleteData" ,method = RequestMethod.POST)
-    public void createAthlete(@RequestParam String name , @RequestParam  String nationality, @RequestParam String sport,@RequestParam String history ,@RequestParam Integer id) throws ParseException {
-        athleteServices.createAthlete(name ,nationality, sport,history, id);
-    }
+   
 
     @RequestMapping(value = "athleteId", method = RequestMethod.GET)
     public Athlete getAthleteById(@RequestParam Integer id) {

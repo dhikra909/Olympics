@@ -31,7 +31,11 @@ public class MedalStandingsConteoler {
         medalStandingsServices.createMedalStandings(name ,number, silver,medals, id);
     }
 
-   
+    @RequestMapping("/updateMedalStandings")
+    public MedalStandings updateMedalStandings(@RequestParam String name , @RequestParam  Integer number, @RequestParam Integer silver, @RequestParam Integer medals , @RequestParam Integer id){
+        return medalStandingsServices.updateMedalStandings(name , number , silver,medals,id);
+    }
+
 
     @RequestMapping(value = "deleteMedalStandingsById", method = RequestMethod.POST)
     public void deleteMedalStandingsById(@RequestParam Integer id) {

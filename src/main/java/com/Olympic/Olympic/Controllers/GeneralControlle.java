@@ -10,7 +10,7 @@ public class GeneralControlle {
 
 //    SlackClient slackClient;
 
-    @GetMapping(value = "test")
+    
     @PreAuthorize("hasRole('USER')")
     public String test(){
         return "${spring.profiles.active}";

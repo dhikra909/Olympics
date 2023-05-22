@@ -4,7 +4,9 @@ import com.Olympic.Olympic.Modles.Event;
 import com.Olympic.Olympic.Modles.MedalStandings;
 import com.Olympic.Olympic.Services.EventServices;
 import com.Olympic.Olympic.Services.MedalStandingsServices;
+import com.Olympic.Olympic.Slack.SlackClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -19,6 +21,8 @@ public class MedalStandingsConteoler {
     @Autowired
     MedalStandingsServices medalStandingsServices;
 
+    @Autowired
+    SlackClient slackClient;
 
 
     @RequestMapping(value = "medalStandingsId", method = RequestMethod.GET)
@@ -42,10 +46,23 @@ public class MedalStandingsConteoler {
         medalStandingsServices.deleteMedalStandingsById(id);
     }
 
+    @Scheduled(cron = "0 0/5 * * * *")
     @GetMapping(value = "/getAllMedalStandings")
-    public List<MedalStandings> getAllEvent() {
-        return medalStandingsServices.getAllMedalStandings();
+    public List<MedalStandings> getAlMedalStandings() {
+        List<MedalStandings> medalStandingsList = medalStandingsServices.getAllMedalStandings();
+        for(MedalStandings medalStandingsData : medalStandingsList) {
+            slackClient.sendMessage(medalStandingsData.getName().toString());
+            slackClient.sendMessage(medalStandingsData.getNumber().toString());
+            slackClient.sendMessage(medalStandingsData.getSilver().toString());
+            slackClient.sendMessage(medalStandingsData.getMedals().toString());
+            slackClient.sendMessage(medalStandingsData.getSilver().toString());
+            slackClient.sendMessage(medalStandingsData.getCreatedDate().toString());
+            slackClient.sendMessage(medalStandingsData.getUpdatedDate().toString());
+//            slackClient.sendMessage(medalStandingsData.getActive().toString());
+        }
+        return medalStandingsList;
     }
+
 
 
 

@@ -20,7 +20,7 @@ public class EventServices {
     @Autowired
     EventRepository eventRepository;
 
-    public void createEvent(String name, String Sport,Date Schedale,String resalts ,Integer id) {
+    public Event createEvent(String name, String Sport,Date Schedale,String resalts ,Integer id) {
         Event event=new Event();
         event.setName(name);
         event.setSport(Sport);
@@ -28,6 +28,7 @@ public class EventServices {
         event.setResalts(resalts);
         event.setId(id);
         eventRepository.save(event);
+        return event;
     }
 
 

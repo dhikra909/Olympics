@@ -32,9 +32,7 @@ public class Athlete extends BaseEntity  {
     @Column(name = "history")
     private String history;
 
-//    @ManyToOne
-//    @JoinColumn(name = "athlete_id", referencedColumnName = "id")
-//    private Athlete athlete;
+
 
 
 }

@@ -27,4 +27,8 @@ public class MedalStandings extends BaseEntity {
     @Column(name = "medals")
     private Integer medals;
 
+
+  @OneToOne
+  @JoinColumn(name = "event_id", referencedColumnName = "id")
+  Event event;
 }

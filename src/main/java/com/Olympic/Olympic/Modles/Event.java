@@ -31,9 +31,9 @@ public class Event extends BaseEntity{
     private String resalts;
 
 
-//    @ManyToOne
-//    @JoinColumn(name = "athlete_id", referencedColumnName = "id")
-//    private Athlete athlete;
+    @ManyToOne
+    @JoinColumn(name = "athlete_id", referencedColumnName = "id")
+    Athlete athlete;
 
 
 

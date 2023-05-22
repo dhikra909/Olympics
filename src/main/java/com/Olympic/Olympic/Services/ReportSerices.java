@@ -17,14 +17,14 @@ import java.util.Map;
 
 @Service
 public class ReportSerices {
-    public static final String pathToReports =" C:\\Users\\user022\\Desktop\\reoprts";
+    public static final String pathToReports ="C:\\Users\\user022\\Desktop\\reoprts";
 @Autowired
     AthleteRepositores athleteRepositores;
     public String generateathleteReport()  throws FileNotFoundException, JRException  {
 
             List<Athlete> athleteList = athleteRepositores.findAll();
 
-            File file = ResourceUtils.getFile("classpath:AthleteReport.jrxml");
+            File file = ResourceUtils.getFile("C:\\Users\\user022\\Desktop\\Olympics\\Olympics\\src\\main\\resources\\AthleteReport.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
             JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(athleteList);
             Map<String, Object> paramters = new HashMap<>();
